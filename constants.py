@@ -6,3 +6,4 @@ NEWTASK_END = 'Ok, I remember your new task, you can add another one or list you
 TASKS_FOR_TODAY = 'Your tasks for today: '
 WHAT_TASK_TO_DELETE = 'Ok, what task you want to drop ?'
 DROP_SUCCESS = 'Task have been successfully deleted, use /tasks to list '
+HAVE_NO_TASKS = 'Oh, it looks like you have no tasks for today.. \nUse /newtask to create new one !'

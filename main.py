@@ -33,10 +33,11 @@ def process_newtask_step(message):
 @bot.message_handler(commands=['tasks', ])
 def tasks(message):
     tasks_list = get_tasks(get_connection(), message.chat.id, message.text)
-    bot.send_message(message.chat.id, constants.TASKS_FOR_TODAY)
-    for task in tasks_list:
-        bot.send_message(message.chat.id, '[ ' + str(task[1]) + ' ] --> ' + str(task[0]))
-    bot.send_message(message.chat.id, '', reply_markup=func_markup)
+    if tasks_list.__len__() == 0:
+        bot.send_message(message.chat.id, constants.HAVE_NO_TASKS)
+    else:
+        for task in tasks_list:
+            bot.send_message(message.chat.id, '[ '+str(task[1])+' ]'+' --> ' + str(task[0]))
 
 
 @bot.message_handler(commands=['droptask', ])
